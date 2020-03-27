@@ -3,15 +3,15 @@ from pathlib import Path
 import cv2
 from tqdm import tqdm
 
-face_sync_dir = Path('../data/face/ ')
+face_sync_dir = Path('../data/face/')
 face_sync_dir.mkdir(exist_ok=True)
-test_sync_dir = Path('../data/face/test_sync/ ')
+test_sync_dir = Path('../data/face/test_sync/')
 test_sync_dir.mkdir(exist_ok=True)
-test_real_dir = Path('../data/face/test_real/ ')
+test_real_dir = Path('../data/face/test_real/')
 test_real_dir.mkdir(exist_ok=True)
-test_img = Path('../data/target/test_img/ ')
+test_img = Path('../data/target/test_img/')
 test_img.mkdir(exist_ok=True)
-test_label = Path('../data/target/test_label/ ')
+test_label = Path('../data/target/test_label/')
 test_label.mkdir(exist_ok=True)
 
 train_dir = '../data/target/train/train_img/'
