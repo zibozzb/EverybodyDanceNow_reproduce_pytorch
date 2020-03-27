@@ -33,7 +33,7 @@ We train and evaluate on Ubuntu 16.04, so if you don't have linux environment, y
 
 * If you break the traning and want to continue last training, set `load_pretrain = './checkpoints/target/` in `./src/config/train_opt.py`
 * Run `normalization.py` rescale the label images, you can use two sample images from `./data/target/train/train_label/` and `./data/source/test_label_ori/` to complete normalization between two skeleton size
-* Run `transfer.py` and get results in `./result`
+* Run `transfer.py` and get results in `./results`
 #### Face enhancement network
 
 ![](/result/fig2.png)
@@ -42,7 +42,7 @@ We train and evaluate on Ubuntu 16.04, so if you don't have linux environment, y
 * Run `./face_enhancer/main.py` train face enhancer and run`./face_enhancer/enhance.py` to gain results <br>
 This is comparision in original (left), generated image before face enhancement (median) and after enhancement (right). FaceGAN can learn the residual error between the real picture and the generated picture faces.
 
-#### Performance of face enhancement 
+#### Performance of face enhancement
 ![](/result/37500_enhanced_full.png)
 ![](/result/37500_enhanced_head.png)
 
@@ -66,5 +66,3 @@ Ubuntu 16.04 <br>
 Python 3.6.5 <br>
 Pytorch 0.4.1  <br>
 OpenCV 3.4.4  <br>
-
-
