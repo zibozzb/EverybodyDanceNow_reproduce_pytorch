@@ -12,8 +12,10 @@ class ImageFolderDataset(Dataset):
             with open(cache, 'rb') as f:
                 self.root, self.images, self.size = pickle.load(f)
         else:
-            self.images = sorted(os.listdir(os.path.join(root, 'test_real')))
             self.root = root
+            self.images = sorted(os.listdir(os.path.join(root, 'test_real')))
+            if self.images[0] == " ":
+                self.images.pop(0)
             tmp = imread(os.path.join(self.root, 'test_real', self.images[0]))
             self.size = tmp.shape[:-1]
             if cache is not None:
@@ -84,4 +86,3 @@ class FaceCropDataset(Dataset): #TODO FaceCropDataset
 
     def __len__(self):
         return len(self.image_dataset)
-
