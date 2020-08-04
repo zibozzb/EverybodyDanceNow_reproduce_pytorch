@@ -7,6 +7,7 @@ from skimage import io
 import matplotlib.animation as ani
 from IPython.display import HTML
 import matplotlib
+matplotlib.rcParams['animation.embed_limit'] = 2**128
 
 source_dir = Path('./data/source/test_img')
 target_dir = Path('./results/target/test_latest/images')
