@@ -11,8 +11,8 @@ from pathlib import Path
 #     cv2.imwrite('./data/source/test_label_ori/{:05d}.png'.format(idx), img)
 
 
-target_img = cv2.imread('./data/target/train/train_label/00001.png')[:,:,0]
-target_img_rgb = cv2.imread('./data/target/train/train_img/00001.png')
+target_img = cv2.imread('./data/target/train/train_label/00342.png')[:,:,0]
+target_img_rgb = cv2.imread('./data/target/train/train_img/00342.png')
 source_img = cv2.imread('./data/source/test_label_ori/00001.png')[:,:,0]
 source_img_rgb = cv2.imread('./data/source/test_img/00001.png')
 
@@ -81,8 +81,10 @@ for img_idx in tqdm(range(len(os.listdir(path)))):
 
     crop_size = 50
     new_head_pose.append([new_head_y,new_head_x])
-    head = img[int(new_head_x - crop_size): int(new_head_x + crop_size),
-           int(new_head_y - crop_size): int(new_head_y + crop_size), :]
+    # head = img[int(new_head_x - crop_size): int(new_head_x + crop_size),
+    #        int(new_head_y - crop_size): int(new_head_y + crop_size), :]
+    head = img[max(0, int(new_head_x - crop_size)): int(new_head_x + crop_size),
+           max(0, int(new_head_y - crop_size)): int(new_head_y + crop_size), :]
     plt.imshow(head)
     plt.savefig(str(head_dir.joinpath('pose_{}.jpg'.format(img_idx))))
 
